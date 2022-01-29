@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testando coisas</title>
+    <style>
+        body {
+            margin: 0px;
+            padding: 0px;
+            background-color: rgba(85, 85, 190, 0.699);
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 18px;
+        }
+        section {
+            background-color: white;
+            max-width: 400px;
+            max-height: 700px;
+            margin: auto;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.432);
+            padding-bottom: 16px;
+        }
+        #campos {
+            width: 300px;
+            margin: auto;
+            text-align: center;
+        }
+        #txt_name {
+            width: 170px;
+        }
+        input {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+        .num {
+            width: 40px;
+            
+        }
+        #final {
+            text-align: center;
+        }
+        h2 {
+            font-size: 1em;
+            text-align: center;
+        }
+        #notafinal {
+            margin-top: 12px;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <h1>Escolinha 2.0!</h1>
+        <p>Agora com campos!</p>
+        <div id="campos">
+            <label for="txt_name">Nome Aluno: </label>
+            <input type="text" name="txt_name" id="txt_name"> <br>
+            <label for="txt_idade">Idade aluno:</label>
+            <input type="number" name="txt_idade" id="txt_idade" class="num"> <br>
+            <label for="txt_n1">Primeira nota:</label>
+            <input type="number" name="txt_n1" id="txt_n1" class="num"> <br>
+            <label for="txt_n2">Segunda nota:</label>
+            <input type="number" name="txt_n2" id="txt_n2" class="num"> <br>
+            <input type="submit" value="Registrar" onclick="registrar()">
+            <input type="button" value="limpar" name="limpar" id="limpar" onclick="limpar()">
+        </div>
+        <hr>
+        <div id="final">
+            <h2>Informações registradas</h2>
+            <label for="nomefinal">Nome</label>
+            <input type="text" name="nomefinal" id="nomefinal" readonly> <br>
+            <label for="idadefinal">Idade</label>
+            <input type="text" name="idadefinal" id="idadefinal" readonly class="num"> <br>
+            <label for="nota1final">Nota1</label>
+            <input type="text" name="nota1final" id="nota1final" readonly class="num"> <br>
+            <label for="nota2final">Nota2</label>
+            <input type="text" name="nota2final" id="nota2final" readonly class="num"> <br>
+            <label for="notafinal">Nota final: </label>
+            <input type="text" name="notafinal" id="notafinal" readonly class="num"> <br>
+            <p id="msg">...</p>
+        </div>
+    </section>
+    <script>
+        function registrar() {
+            document.getElementById('msg').value = '...';
+
+            nomefinal.value = window.document.getElementById('txt_name').value;
+            txt_name.value = '';
+
+            idadefinal.value = window.document.getElementById('txt_idade').value;
+            txt_idade.value = '';
+
+            var n1final = Number(window.document.getElementById('txt_n1').value);
+            nota1final.value = n1final;
+            txt_n1.value = '';
+
+            n2final = Number(window.document.getElementById('txt_n2').value);
+            nota2final.value = n2final;
+            txt_n2.value = '';
+
+            var nfinal = Number((n1final + n2final) / 2);
+            notafinal.value = nfinal;
+
+            if (nfinal >= 7) {
+                document.getElementById('msg').innerText = 'Parabéns! Seu filho passou de ano!'
+            }   else {
+                document.getElementById('msg').innerText = 'Seu filho não passou de ano.'
+            }
+        }
+        function limpar() {
+            document.getElementById('msg').innerText = '...';
+            txt_name.value = '';
+            txt_idade.value = '';
+            txt_n1.value = '';
+            txt_n1.value = '';
+            txt_n2.value = '';
+            nomefinal.value = '';
+            idadefinal.value = '';
+            nota1final.value = '';
+            nota2final.value = '';
+            notafinal.value = '';
+        }
+    </script>
+</body>
+</html>

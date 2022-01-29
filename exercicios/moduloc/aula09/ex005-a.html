@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio 005</title>
+    <style>
+        body {
+            background-color: rgba(240, 128, 128, 0.733);
+        }
+    </style>
+</head>
+<body>
+    <h1>teste</h1>
+    <p class="msg">Bem vindo de volta, <strong id='name'>UNDEFINED</strong>!</p>
+    <p>Aprendendo novas coisas</p>
+    <div>
+        <h2>Testando</h2>
+        <a href="#">minha foto</a>
+    </div>
+    <script>
+        /*
+        var nome = window.prompt('Seu nome: ');
+        var d = window.document.getElementById('msg');
+        d.innerText = `Bem vindo, ${nome}!`;
+        */
+       /*
+        var d = window.document.querySelector('p.msg');
+        d.style.backgroundColor = 'lightblue';
+        */
+       var nome = window.prompt('Seu nome: ');
+       var n1 = window.document.getElementById('name');
+       n1.innerText = nome;
+    </script>
+</body>
+</html>

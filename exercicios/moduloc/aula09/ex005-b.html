@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentos!</title>
+    <style>
+        body {
+            background-color: lightsalmon;
+        }
+        main {
+            max-width: 500px;
+            background-color: white;
+            margin: auto;
+            padding: 12px;
+            border-radius: 10px;
+            box-shadow: 2px 2px 9px rgba(0, 0, 0, 0.473);
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Escolinha!</h1>
+        <p>Passou de ano?</p>
+        <p>Nome aluno: <strong id="nome">UNDEFINED</strong></p>
+        <p>Idade aluno: <strong id="idade">UNDEFINED</strong></p>
+        <p>Primeira nota: <strong id="nota1">-</strong></p>
+        <p>Segunda nota: <strong id="nota2">-</strong></p>
+        <h2>Sua nota final é: <strong id="final"> - </strong></h2>
+        <p id="recado"> ... </p>
+    </main>
+    <script>
+        //variáveis do prompt
+        var nome = window.prompt('Nome aluno');
+        var idade = Number(window.prompt('Idade aluno'));
+        var n1 = Number(window.prompt('Primeira nota'));
+        var n2 = Number(window.prompt('Segunda nota'));
+
+        //Atribuíndo os dados com DOM
+        window.document.getElementById('nome').innerText = nome;
+        window.document.getElementById('idade').innerText = idade;
+        window.document.getElementById('nota1').innerText = n1;
+        window.document.getElementById('nota2').innerText = n2;
+
+        var media = (n1 + n2) / 2;
+        window.document.getElementById('final').innerText = media.toFixed(1);
+
+        if (media >= 7) {
+            window.document.getElementById('recado').innerText = `Parabéns ${nome}! Você passou de ano!`;
+        } else {
+            window.document.getElementById('recado').innerText = `Desculpe ${nome}, você não passou de ano.`
+        }
+    </script>
+</body>
+</html>
