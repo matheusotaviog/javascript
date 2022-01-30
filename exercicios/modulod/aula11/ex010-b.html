@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>País</title>
+</head>
+<body>
+    <h1>PAÍSES DO MUNDO</h1>
+    <p>Informe seu país logo abaixo</p>
+    <input type="text" name="txtpais" id="txtpais">
+    <input type="button" value="Validar" onclick="Validar()">
+    <div id="res">
+
+    </div>
+    <script>
+
+        function Validar () {
+            var pais = String(document.querySelector('input#txtpais').value)
+            var res = document.querySelector('div#res')
+
+            res.innerHTML = 'Seu país é muito legal!'
+            if (pais == 'brasil' || pais == 'Brasil') {
+                res.innerHTML += '<br>Você é Brasileiro!'
+            } else {
+                res.innerHTML += '<br>Você é Estrangeiro!'
+            }
+        }
+
+    </script>
+</body>
+</html>
