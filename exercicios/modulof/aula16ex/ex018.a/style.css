@@ -1,0 +1,41 @@
+@charset "UTF-8";
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    background-color: #EF8861;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    min-width: 300px;
+}
+
+header {
+    margin: auto;
+    text-align: center;
+    color: white;
+    margin-top: 15px;
+}
+
+section {
+    background-color: white;
+    width: 500px;
+    padding: 10px;
+    border-radius: 12px;
+    max-height: 800px;
+    margin: auto;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+select#tab {
+    margin-top: 15px;
+}
+
+footer {
+    color: white;
+    margin: auto;
+    text-align: center;
+    font-weight: bold;
+}
