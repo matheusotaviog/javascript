@@ -17,12 +17,13 @@ function calculo() {
     let n = Number(document.getElementById('txtnum').value);
     if (n <= 0 || n >= 101) {
         alert('Seu número não está de acordo.');
-    } else if (res.text != ''){
-        res.text = '';
-        texto.innerHTML = '';
-        tab.text = '';
+    //} else if (res.text != ''){
+    //    res.text = '';
+    //    texto.innerHTML = '';
+    //    tab.text = '';
     } else {
         if (arrNum.indexOf(n) == -1) {
+            texto.textContent = ''; //possivel problema
             arrNum.push(n);
             let opt = document.createElement('option');
             opt.text = `O número ${n} foi adicionado`;
@@ -38,11 +39,21 @@ function calculo() {
 function finalizar() {
     if (arrNum.length == 0) {
         alert('Erro! Adicione pelo menos um número.');
-        console.log('Array tamanho: ' + arrNum.length);
     } else if (arrNum.length != 0) {
+        var soma = 0;
+        tab.textContent = '';
         res.text = `Ao todo, temos ${arrNum.length} números cadastrados. <br>`;
-        res.text += `A maior valor informado foi ${arrNum.sort()[0]}`;
+        res.text += `A maior valor informado foi ${arrNum.sort()[arrNum.length - 1]}.<br>`;
+        res.text += `O menor valor informado foi ${arrNum.sort()[0]}.<br>`;
+        //somando os números de um array
+        for (let i = 0; i < arrNum.length; i++) {
+            soma += arrNum[i];
+            console.log(soma);
+        }
+        res.text += `Somando todos os valores, temos ${soma}.<br>`;
+        res.text += `A média dos valores digitados é ${soma / arrNum.length}. <br>`;
         texto.innerHTML = res.text;
-        console.log('Array tamanaaaaho: ' + arrNum.length);
-    }
+        arrNum = []; //possivel problema
+        console.log(arrNum);
+    };
 }
